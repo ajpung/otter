@@ -1,5 +1,6 @@
 # River Critters
 A machine learning tool to predict the presence and density of woodland creatures images taken by trail cameras.
+This data is taken from three trail cameras in Kansas throughout the year.
 
 # Introduction
 
