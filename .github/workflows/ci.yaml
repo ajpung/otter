@@ -67,14 +67,6 @@ jobs:
         with:
           python-version: ${{ matrix.python_version}}
 
-      - name: Setup conda
-        uses: s-weigand/setup-conda@v1
-        with:
-          update-conda: true
-          activate-conda: true
-          python-version: ${{ matrix.python_version }}
-          conda-channels: anaconda, conda-forge
-
       - name: Install Dependencies
         run: |
           pip install --upgrade pip setuptools wheel numpy 
