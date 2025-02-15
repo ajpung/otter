@@ -1,0 +1,26 @@
+{
+  "name": "generic",
+  "devDependencies": {
+    "semantic-release": "^22.0.5"
+  },
+  "release": {
+    "tagFormat": "${version}",
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md",
+          "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file."
+        }
+      ]
+    ]
+  },
+  "engines": {
+    "node": "^18.0.0"
+  }
+}

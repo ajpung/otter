@@ -1,0 +1,235 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="report.css" rel="stylesheet">
+    <title>Report</title>
+    <meta name="description" content="Report example">
+  </head>
+
+  <body>
+    <!------------------------------ COVER ------------------------------>
+    <article id="cover">
+    </article>
+
+    <!------------------------ TABLE OF CONTENTS ------------------------>
+    <article id="contents">
+      <h2>Table of contents</h2>
+      <ul>
+        <li><a href="#introduction-title"></a></li>
+        <li><a href="#features-title"></a></li>
+        <li><a href="#interpretation-title"></a></li>
+        <li><a href="#satgeom-title"></a></li>
+      </ul>
+    </article>
+    
+    <!--------------------------- INTRODUCTION -------------------------->
+    <article id="introduction">
+      <h2 id="introduction-title">Introduction</h2>
+
+      <h3>Simulating the interaction between spacecraft and radiation</h3>
+
+      <section>
+        <p>
+          The Radiation And Trajectory Simulator (RATS) tool is a Python-based
+          tool used to model the interaction between an antenna's propagating
+          radiation pattern and an on-orbit satellite. RATS combines a database
+          of three-dimensional models, trajectory information, and sensor data to
+          predict when and if a specific satellite should able to detect radiation
+          from a transmitting radio frequency (RF) source.
+        </p>
+        <p>
+          At a high level, RATS is meant to complement other software tools
+          developed by Slingshot Aerspace, including the Physically High-Fidelity
+          Astrodynamics Simulation Engine (PHASE). the High-Accuracy EMI
+          Remediation System (HAERTS), and Beacon.
+        </p>
+        <p>          
+          For this reason, RATS shares many common elements with other software
+          products developed at Slingshot Aerospace. For instance, RATS shares a
+          common coordinate system (J2000) with PHASE, allowing the same trajectory
+          data to be used on both platforms. Additionally, the heatmap format used
+          by HAERTS is used within RATS to ensure the results from the latter can
+          be easily integrated into the former.
+        </p>
+        <p>
+          At a low level, RATS comprises three main sections. Simulation of the
+          antenna's radiation is handled via the Numerical Electromagnetics Code
+          (NEC) -- a well-known and highly-validated software used across the RF
+          industry. Trajectories are read in using a JSON file exported from
+          PHASE. Lastly, the satellite CAD models are externally developed
+          using Blender; once sized to realistic dimensions, the resulting
+          geometry is stored for future use and modification.  
+        </p>
+      </section>
+    </article>
+
+    <!----------------------------- FEATURES ---------------------------->    
+    <article id="features">
+      <h2 id="features-title">Features</h2>
+
+      <!-- <h3>Enhanced realism for improved accuracy.</h3> -->
+
+      <section id="table-content">
+        <h4>A growing satellite database</h4>
+        <p>
+          The RATS satellite currently comprises 23 different models ranging from 
+          ACRIMSAT to Uydu, each sized to realistic dimensions.
+        </p>
+      </section>
+
+      <section id="heading">
+        <h4>High-fidelity antenna modeling</h4>
+        <p>
+          NEC's antenna modeling capabilities allow the user to build and place 
+          arbitrary antenna geometries across a variety of frequencies.
+        </p>
+      </section>
+
+      <section id="multi-columns">
+        <h4>Realistic trajectory profiles</h4>
+        <p>
+          Realistic satellite trajectories are shared with the Physically
+          High-Fidelity Astrodynamics Simulation Engine (PHASE).
+        </p>
+      </section>
+
+      <section id="internal-links">
+        <h4>Portable and efficient visualization</h4>
+        <p>
+          Among other items, RATS produces a portable, intuitive, and interactive 
+          three-dimensional visualization to enhance the user's understanding.
+        </p>
+      </section>
+
+      <section id="style">
+        <h4>Cross-product integration</h4>
+        <p>
+          From its inception, RATS was built as a tool to work with existing 
+          Slingshot sotware products such as Beacon, HAERTS, and Seradata.
+        </p>
+      </section>
+    </article>
+
+    <!-------------------------- INTERPRETATION ------------------------->
+    <article id="interpretation">
+      <h2 id="interpretation-title">Data products</h2>
+
+      <h3>Enhancing understanding through clarified results
+      </h3>
+
+      <section>
+        <p>
+          The Radiation And Trajectory Simulator (RATS) tool is a Python-based
+          tool used to model the interaction between an antenna's propagating
+          radiation pattern and an on-orbit satellite. RATS combines a database
+          of three-dimensional models, trajectory information, and sensor data to
+          predict when and if a specific satellite should able to detect radiation
+          from a transmitting radio frequency (RF) source.
+        </p>
+        <img src="../../docs/report/map.png" alt="">
+        <p>
+          At a high level, RATS is meant to complement other software tools
+          developed by Slingshot Aerspace, including the Physically High-Fidelity
+          Astrodynamics Simulation Engine (PHASE). the High-Accuracy EMI
+          Remediation System (HAERTS), and Beacon.
+        </p>
+        <p>          
+          For this reason, RATS shares many common elements with other software
+          products developed at Slingshot Aerospace. For instance, RATS shares a
+          common coordinate system (J2000) with PHASE, allowing the same trajectory
+          data to be used on both platforms. Additionally, the heatmap format used
+          by HAERTS is used within RATS to ensure the results from the latter can
+          be easily integrated into the former.
+        </p>
+        <p>
+          At a low level, RATS comprises three main sections. Simulation of the
+          antenna's radiation is handled via the Numerical Electromagnetics Code
+          (NEC) -- a well-known and highly-validated software used across the RF
+          industry. Trajectories are read in using a JSON file exported from
+          PHASE. Lastly, the satellite CAD models are externally developed
+          using Blender; once sized to realistic dimensions, the resulting
+          geometry is stored for future use and modification.  
+        </p>
+      </section>
+    </article>
+
+    <!----------------------------- SATELLITE --------------------------->
+    <article id="satgeom">
+      <h2 id="satgeom-title">Satellite geometry</h2>
+    
+      <h3>Satellite geometry, depiction, and description</h3>
+    
+      <div style="display: flex;">
+        <div style="width: 50%; padding-right: 2em;">
+          <img style="width: 100%;" src="../../docs/report/satellite.png" alt="">
+          <table class="tg" style="table-layout: fixed; width: 100%">
+            <colgroup>
+              <col style="width: 150px">
+              <col style="width: 150px">
+            </colgroup>
+            <tr>
+              <td class="tg-zv4m">Name</td>
+              <td class="tg-ofj5">Uydu</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Cost [$]</td>
+              <td class="tg-ofj5">600,000,000</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Manufacturer</td>
+              <td class="tg-ofj5">TAI</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Duration [years]</td>
+              <td class="tg-ofj5">15</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Orbit altitude [km]</td>
+              <td class="tg-ofj5">35,785</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Max. velocity [km/s]</td>
+              <td class="tg-ofj5">11,051</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Dy mass [kg]</td>
+              <td class="tg-ofj5">1,577</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">NORAD ID</td>
+              <td class="tg-ofj5"> - </td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Uplink [GHz]</td>
+              <td class="tg-ofj5">7.3 - 18.10</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Downlink [GHz]</td>
+              <td class="tg-ofj5">11.70 - 12.75</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Reference frame</td>
+              <td class="tg-ofj5">Geocentric</td>
+            </tr>
+            <tr>
+              <td class="tg-zv4m">Regime</td>
+              <td class="tg-ofj5">Geostationary</td>
+            </tr>
+          </table>
+        </div>
+        <div style="width: 50%;">
+            <p>
+              Launched in 2024, the Uydu satellite was manufactured by the Turkish
+              Aerospace Industries for roughly $600,000,000. The satellite's mission
+              is
+            </p>
+            <p>
+              Construction-wise, the Uydu satellite comprises a main body and two
+              solar panel arrays extending laterally to its side. For power consumption,
+              the solar panels can be rotated to face the sun.
+            </p>
+          </div>
+      </div>
+    </article>
+  </body>
+</html>

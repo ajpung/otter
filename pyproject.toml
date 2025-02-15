@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "generic"
+requires-python = ">=3.9"
+authors = [
+    {name = "Aaron Pung", email = "aaron.pung@gmail.com"},
+]
+description = "Tool for Antenna Data Analysis"
+readme = "README.md"
+dependencies = [
+    "numpy",
+    "pandas",
+    "plotly==5.18.0",
+    "pydantic==2.4.2",
+    "pydantic_core==2.10.1",
+]
+dynamic = ["version"]
+
+[tool.setuptools.package-data]
+gneeric = ["py.typed"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "mypy",
+    "kaleido"
+]
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+    "myst_parser",
+    "autodoc_pydantic",
+    "furo",
+]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+plugins = "numpy.typing.mypy_plugin"
+
+
+[[tool.mypy.overrides]]
+module = [
+    "astropy.*",
+]
+ignore_missing_imports = true
+
+[tool.setuptools_scm]
+
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:version",
+]
+tag_format = "{version}"

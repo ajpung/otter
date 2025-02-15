@@ -1,0 +1,25 @@
+name: Changelog CI
+
+on:
+  pull_request:
+    types: [ opened ]
+
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'Set Release Version'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Changelog CI
+        uses: saadmk11/changelog-ci@v1.1.2
+        with:
+          committer_username: 'ajpung'
+          committer_email: 'aaron.pung@gmail.com'
+          release_version: ${{ github.event.inputs.release_version }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}

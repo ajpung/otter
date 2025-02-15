@@ -1,0 +1,85 @@
+name: GENERIC CI
+
+on:
+  pull_request:
+    paths:
+      - src/**
+      - tests/sw_tests/**
+      - .github/workflows/ci.yaml
+      - pyproject.toml
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  formatting-and-linting:
+    name: CI
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Setup conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          activate-conda: true
+          python-version: "3.10"
+          conda-channels: anaconda, conda-forge
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip setuptools wheel numpy 
+          pip install --upgrade .[dev]
+          
+      - name: Run format test
+        run: |
+          python -m black --check .
+
+      - name: Run mypy
+        uses: tsuyoshicho/action-mypy@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
+          reporter: github-pr-review
+          level: error
+          # action should fail if there are errors
+          fail_on_error: true
+          target: src
+          workdir: '.'
+
+  run-tests:
+    name: Run tests
+    strategy:
+      matrix:
+        python_version: ["3.10"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python_version}}
+
+      - name: Setup conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          activate-conda: true
+          python-version: ${{ matrix.python_version }}
+          conda-channels: anaconda, conda-forge
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip setuptools wheel numpy 
+          pip install .[dev]
+
+      - name: Run Tests
+        run: |
+          python -m pytest tests/sw_tests/**
