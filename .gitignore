@@ -7,9 +7,8 @@ __pycache__/
 *.so
 
 # Images
-images/*
-*.png
-*.jpg
+images/*.png
+images/*.jpg
 
 # Distribution / packaging
 .Python
