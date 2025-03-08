@@ -1,16 +1,82 @@
+# OTTER Computer Vision Project .gitignore
+# This file ensures large image datasets, model weights, and temporary files
+# don't end up in the repository
+
+# Data files - with both lowercase and uppercase extensions
+data/*.jpg
+data/*.JPG
+data/*.jpeg
+data/*.JPEG
+data/*.png
+data/*.PNG
+data/**/*.jpg
+data/**/*.JPG
+data/**/*.jpeg
+data/**/*.JPEG
+data/**/*.png
+data/**/*.PNG
+data/**/*.bmp
+data/**/*.BMP
+data/**/*.tif
+data/**/*.TIF
+data/**/*.tiff
+data/**/*.TIFF
+data/**/*.gif
+data/**/*.GIF
+data/**/*.raw
+data/**/*.RAW
+data/**/*.mp4
+data/**/*.MP4
+data/**/*.avi
+data/**/*.AVI
+data/**/*.mov
+data/**/*.MOV
+data/**/*.webm
+data/**/*.WEBM
+
+# Keep data directory structure but not image files
+!data/**/
+!data/**/.gitkeep
+
+# Model files and weights
+*.h5
+*.hdf5
+*.pb
+*.onnx
+*.pt
+*.pth
+*.weights
+*.bin
+*.pkl
+**/checkpoints/
+**/saved_models/
+**/pretrained/
+
+# Temporary and intermediate files
+data/temp/
+data/intermediate/
+data/processed/
+data/augmented/
+
+# Annotation files (can be large and regenerated)
+data/**/*.xml
+data/**/*.json
+# If using COCO format, uncomment:
+# data/**/annotations/
+# If using YOLO format, uncomment:
+# data/**/*.txt
+
+# Output directories
+output/
+results/
+visualization/
+logs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Images
-images/*.png
-images/*.jpg
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -24,110 +90,11 @@ parts/
 sdist/
 var/
 wheels/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# Unneeded images
-./*.png
-./*.pptx
-
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
-.pdm.toml
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
+# Virtual environments
 .env
 .venv
 env/
@@ -135,37 +102,117 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.python-version
 
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
+# IDE specific files
 .idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+.DS_Store
+.ipynb_checkpoints/
+*.sublime-workspace
+*.sublime-project
 
-*.DS_Store
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Images
-/images/*
-*.png
-*.jpb
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Documentation
+/docs/_build/
+/docs/api/
+/site/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local configuration
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config.local.yaml
+config.dev.yaml
+secrets.yaml
+
+# Generated files
+/generated/
+
+# Large binary files
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# Large image files
+*.pptx
+docs/_static/*.pptx
+
+# TensorBoard logs
+**/tensorboard/
+**/runs/
+
+# wandb logs
+wandb/
+
+# Do include these files
+!.gitignore
+!README.md
+!requirements.txt
+!setup.py
+!LICENSE
+!.github/workflows/auto-version.yml
+
+# Add this to your .gitignore
+docs/report/
+
+# Large binary files
+docs/_static/graphics.pptx
+docs/source/generic_logo.png
