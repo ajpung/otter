@@ -2,7 +2,7 @@ name: Auto Version Increment
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, add-version ]
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
