@@ -15,4 +15,4 @@ This data is taken from three trail cameras in Kansas throughout the year.
 
 The project is broken into two pieces. The first piece is based on machine learning, and is used to predict which 
 woodland animals are in which scenes. The second portion is based on computer vision, used to determine *where* the
-creatures are in each scene.
+creatures are in each scene. Similar to BUCK, this analysis follows the textbook. "Deep Learning for Vision Systems", by M. Elgendy.
