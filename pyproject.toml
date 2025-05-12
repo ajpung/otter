@@ -21,10 +21,9 @@ gneeric = ["py.typed"]
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
-    "black",
     "mypy",
-    "kaleido"
+    "black",
+    "pytest",
 ]
 docs = [
     "sphinx",
