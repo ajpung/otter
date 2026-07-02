@@ -3,36 +3,14 @@
 # don't end up in the repository
 
 # Data files - with both lowercase and uppercase extensions
-data/*.jpg
-data/*.JPG
-data/*.jpeg
-data/*.JPEG
-data/*.png
-data/*.PNG
-data/**/*.jpg
-data/**/*.JPG
-data/**/*.jpeg
-data/**/*.JPEG
-data/**/*.png
-data/**/*.PNG
-data/**/*.bmp
-data/**/*.BMP
-data/**/*.tif
-data/**/*.TIF
-data/**/*.tiff
-data/**/*.TIFF
-data/**/*.gif
-data/**/*.GIF
-data/**/*.raw
-data/**/*.RAW
-data/**/*.mp4
-data/**/*.MP4
-data/**/*.avi
-data/**/*.AVI
-data/**/*.mov
-data/**/*.MOV
-data/**/*.webm
-data/**/*.WEBM
+*.jpg
+*.png
+*.tif
+*.mov
+
+# OTTER artifacts
+otter_work/
+
 
 # Keep data directory structure but not image files
 !data/**/
