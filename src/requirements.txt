@@ -1,0 +1,8 @@
+# OTTER stage 1 — detection + review GUI
+PytorchWildlife    # MegaDetector V6 (pulls in torch, ultralytics, supervision)
+Flask              # the local review GUI
+librosa
+Pillow             # image loading / cropping
+numpy
+soundfile
+speciesnet
