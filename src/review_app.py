@@ -61,6 +61,7 @@ CLASSES = [
     ("cat",           "Cat",          "Mammals"),
     ("raccoon",       "Raccoon",      "Mammals"),
     ("possum",        "Possum",       "Mammals"),
+    ("woodchuck",     "Woodchuck",    "Mammals"),
     ("butterfly",     "Butterfly",    "Other"),
     ("other",         "Other",        "Other"),
     ("false_positive","Not an animal","Other"),
@@ -71,13 +72,14 @@ VALID = {c[0] for c in CLASSES}
 # "Deer" is the rolled-up total (matches your existing sheet: buck+doe = deer).
 COUNT_COLUMNS = ["Buck", "Doe", "Fawn", "Deer", "Coyote", "Cat", "Turkey",
                  "Raccoon", "Bobcat", "Crow", "Woodpecker", "Cardinal",
-                 "Possum", "Eagle", "Butterfly"]
+                 "Possum", "Woodchuck", "Eagle", "Butterfly"]
 LABEL_TO_COLUMNS = {
     "buck": ["Buck", "Deer"], "doe": ["Doe", "Deer"], "fawn": ["Fawn", "Deer"],
     "deer_unknown": ["Deer"], "coyote": ["Coyote"], "cat": ["Cat"],
     "turkey": ["Turkey"], "raccoon": ["Raccoon"], "bobcat": ["Bobcat"],
     "crow": ["Crow"], "woodpecker": ["Woodpecker"], "cardinal": ["Cardinal"],
-    "possum": ["Possum"], "eagle": ["Eagle"], "butterfly": ["Butterfly"],
+    "possum": ["Possum"], "woodchuck": ["Woodchuck"],
+    "eagle": ["Eagle"], "butterfly": ["Butterfly"],
     # other / false_positive contribute to no species column
 }
 
